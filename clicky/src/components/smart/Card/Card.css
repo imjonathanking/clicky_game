@@ -1,0 +1,30 @@
+.card{
+    /* Sizing & Positioning */
+    height: 175px;
+    width: 175px;
+    overflow: hidden;
+    margin: 15px 25px;
+    padding: 5px;
+
+    /* Styling */
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+
+    /* Animation */
+    transition: all .09s ease-in-out;
+
+    /* Setup for Child Elements */
+    display: flex;
+    justify-content: center;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.25), 0 15px 15px rgba(0, 0, 0, 0.22);
+}
+
+.card-img{
+    /* Sizing & Positioning */
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+}

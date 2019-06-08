@@ -1,0 +1,69 @@
+.game-page{
+    margin-top: 90px;
+}
+
+.game-title{
+    /* Sizing & Positioning */
+    height: 400px;
+
+    /* Styling */
+    background-image: url("../../assets/img/background.jpg");
+
+
+    /* Blending background */
+    background-color: rgb(81, 58, 97);
+    background-blend-mode: soft-light;
+    color: white;
+
+    /* Setup for child elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* Styling for child elements */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Child elements of .game-title */
+.game-title > *{
+    /* Sizing and positioning */
+    margin: 20px 0px;
+}
+
+.game-title-header{
+    font-size: 70px;
+}
+
+.game-title-description{
+    font-size: 25px;
+}
+
+.game-area{
+
+    /* Sizing & Positioning */
+    width: 100%;
+
+    /* Setup for Child Elements */
+    display: flex;
+    justify-content: center;
+
+    /* Testing */
+    /* border: 2px solid red; */
+}
+
+.game{
+    /* Sizing & Positioning */
+    min-height: 400px;
+    width: 60%;
+    margin: 80px 0px;
+    
+    /* Testing */
+    /* border: 2px solid blue; */
+
+    /* Setup for child elements */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}

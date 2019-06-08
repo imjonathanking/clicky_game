@@ -1,0 +1,29 @@
+.navbar{
+    /* Sizing & Positioning */
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 100%;
+
+    /* Styling */
+    background-color: #5133a4;
+    color: white;
+    font-size: 35px;
+
+    /* Setup for child elements */
+    display: grid;
+    grid-template-columns: [left] 33.3% [middle] 33.3% [right] 33.3%;
+}
+
+/* child elements of .navbar */
+.navbar > * {
+
+    /* Setup for child elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-title{
+    font-weight: bold;
+}
