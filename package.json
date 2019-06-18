@@ -1,0 +1,21 @@
+{
+  "name": "clicky_game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd clicky && npm run start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjonathanking/clicky_game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imjonathanking/clicky_game/issues"
+  },
+  "homepage": "https://github.com/imjonathanking/clicky_game#readme"
+}

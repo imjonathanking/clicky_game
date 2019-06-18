@@ -38,77 +38,30 @@ class Game extends Component{
         return newArr;
     }
 
-    handleClick = (clickedId) => {
-        console.log(`Clicked id: ${clickedId}`);
+    handleClick = (item) => {
+        let gameLost = item.clicked;
+        item.clicked = true;
 
-        const cards = this.state.allCards;
+        const shuffledCards = this.shuffle(this.state.allCards);
 
-        this.gameLost = false;
-
-        // Iterate through each object in the state.allCards array
-        const newCards = cards.map(item => {
-            // If the click object's id matches the current item in the array's id
-            if(item.id === clickedId){
-                // If object has been clicked before
-                if(item.clicked === true){
-                    console.log(`${item.name} has been clicked before`);
-                    this.gameLost = true;
-                }
-
-                // change "clicked" to true on object, and add it to the array
-                const newCard = {...item, clicked: true}
-                return newCard
-            }
-            return item;
-        })
-
-        const shuffledCards = this.shuffle(newCards);
-        console.log(shuffledCards);
-
-        console.log(`Game Lost: ${this.gameLost}`);
-        // console.log(newCards);
-
-        // If this object has not been clicked before
-        if(this.gameLost === false){
-
-            // this.setState({
-            //     score: this.state.score + 1,
-            //     topScore: this.state.score > this.state.topSore 
-            //                 ? this.state.score
-            //                 : this.state.topScore
-            // })
-
-            this.setState(prevState => {
-                console.log("PrevState score: " + prevState.score);
-                let newScore = prevState.score + 1;
-                let topScore = prevState.topScore;
-
-                if(newScore > topScore){
-                    topScore = newScore
-                }
-
-                // Updating state
-                return({
-                    score: newScore,
-                    allCards: shuffledCards,
-                    topScore: topScore,
-                    status: "You guessed correctly!"
-                })
-
-            },function(){
-                console.log("Set state, correct guess");
-                console.log(this.state);
-            })
-        }
-        // If this object has not been clicked before
-        else{
+        if (!gameLost) {
+            const newScore = this.state.score + 1;
             this.setState({
-                allCards: cardData,
+                score: newScore,
+                topScore: newScore > this.state.topScore 
+                            ? newScore
+                            : this.state.topScore,
+                allCards: shuffledCards,
+                status: "You guessed correctly"
+            })
+        } else {
+            // shuffle and reset clicked values
+            shuffledCards.forEach(item => item.clicked = false);
+
+            this.setState({
+                allCards: shuffledCards,
                 score: 0,
                 status: "You guessed incorrectly!"
-            }, function(){
-                console.log(`id: ${clickedId} has been clicked before, updated state:`);
-                console.log(this.state);
             })
         }
     }

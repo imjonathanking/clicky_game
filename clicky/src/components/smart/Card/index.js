@@ -11,7 +11,7 @@ function Card(props){
                 className="card-img"
                 src={props.obj.img}
                 alt={props.obj.id}
-                onClick={() => props.click(props.obj.id)}
+                onClick={() => props.click(props.obj)}
             >
             </img>
         </div>
